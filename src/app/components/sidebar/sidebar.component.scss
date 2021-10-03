@@ -1,0 +1,11 @@
+.active{
+    --ion-text-color : #f9b801;
+        ion-icon{
+            --ion-text-color-rgb: var(--ion-color-primary);
+        }
+    
+}
+
+.active-parent{
+    font-weight: 500;
+}

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" (click)="back_button()">
+      <ion-icon name="arrow-back-circle-outline" id = "back_button"></ion-icon>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf ="data">
+  <app-job-profile-refresher></app-job-profile-refresher>
+  <ion-card >
+  <div class="banner justify-content-center">
+  
+    <img class="cap_img" [src]="data.job_logo"  />
+  </div>
+  </ion-card>
+
+  <div class="content">
+    <h2>{{data.job_name}}</h2>
+    <p>{{data.company_name}}</p>
+    <hr>
+    <h2>Job Details</h2>
+    <span class="location"><ion-icon name='location-outline'></ion-icon>&nbsp;&nbsp;{{data.job_location}}</span>
+    <p class="location"><ion-icon name='mail-outline'></ion-icon>&nbsp;&nbsp;{{data.reference_email}}</p>
+    
+    
+    <div class="info">
+      <h4>Number Of Vacancy</h4>
+      <p>{{data.number_of_vacancy}}</p>
+
+      <h4>Expected salary</h4>
+      <p>{{data.expected_salary}}</p>
+
+      <h4>Salary Type</h4>
+      <p>{{data.salary_type}}</p>
+
+      <h4>Experienced Required</h4>
+      <p>{{data.experienced_required}}</p>
+      <hr>
+      <h2>Key Skills</h2>
+      <p>{{data.key_skills}}</p>
+      <h2>Job Qualification</h2>
+      <p>{{data.job_qualification}}</p>
+      <h2>Job Description</h2>
+      <p>{{data.job_description}}</p>
+  
+
+    
+
+    </div>
+  </div>
+  
+
+  
+  
+  
+    
+
+</ion-content>

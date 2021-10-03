@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" (click)="back_button()">
+      <ion-icon name="arrow-back-circle-outline" id = "back_button"></ion-icon>
+    </ion-buttons>
+    <ion-title>Event Profile</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "data">
+  <app-event-profile-refresher></app-event-profile-refresher>
+
+  <ion-card >
+  <div class="banner justify-content-center">
+  
+    <img class="cap_img" [src]="data.event_picture"  />
+  </div>
+  </ion-card>
+
+  <div class="content">
+    <h2>{{data.event_name}}</h2>
+    <hr>
+    <h2>Job Details</h2>
+    <span class="location"><ion-icon name='location-outline'></ion-icon>&nbsp;&nbsp;{{data.event_located}}</span>
+    <p class="location"><ion-icon name='time-outline'></ion-icon>&nbsp;&nbsp;{{data.time}}</p>
+    <p class="location"><ion-icon name='mail-outline'></ion-icon>&nbsp;&nbsp;{{data.date}}</p>
+    
+    
+    <div class="info">
+      
+      <h2>Event Description</h2>
+      <p>{{data.event_description}}</p>
+  
+
+    
+
+    </div>
+  </div>
+  
+
+  
+  
+  
+    
+
+</ion-content>

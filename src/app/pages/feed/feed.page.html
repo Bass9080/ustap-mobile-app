@@ -1,0 +1,195 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" color="primary">
+      <!-- <ion-menu-button ></ion-menu-button> -->
+      <app-toggle></app-toggle>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+
+    <ion-buttons slot="end" color="primary" class="ion-padding" (click)= "calendar();" >
+      <ion-icon name="calendar-outline"  style="font-size: 23px;" ></ion-icon>
+     
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-row>
+    <ng-container *ngIf="!isLoading">
+      <ion-col
+      size="12"
+      size-md="6"
+      offsetMd="3"
+      size-lg="7"
+      offsetLg="4"
+      class="ion-no-padding"
+    >
+    <ion-card class="post-card"  >
+      <ion-item lines="none" class="ion-no-padding post-item" >
+
+       <input placeholder="Share you ideas, strategy and experience" class="share" >
+      </ion-item>
+    </ion-card>
+    </ion-col>
+
+    <ion-col
+    size="12"
+    size-md="6"
+    offsetMd="3"
+    size-lg="7"
+    offsetLg="4"
+    class="ion-no-padding"
+  >
+
+    <!-- <ion-card class="post-list-card" *ngFor="let post of posts" >
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="post.photo" />
+          </ion-avatar>
+          <ion-label>
+             {{post.name}}
+            <p>2 minutes ago</p>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="medium">
+              <ion-icon slot="icon-only" md="ellipsis-vertical-outline" ios="ellipsis-horizontal-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+      </ion-item>
+      <img src="../../assets/background/first.jpg" />
+      
+      <ion-card-content class="post-list-content">
+       {{post.post_text}}
+      </ion-card-content>
+      <ion-item lines="none" class="ion-no-padding" style="margin-left: 10px">
+        <ion-buttons slot="start">
+          <ion-button color="{{color}}" (click) = "heart_post()">
+            <ion-icon slot="start"  name="heart-outline"></ion-icon>
+            <small>100</small>
+          </ion-button>
+          <ion-button color="medium">
+            <ion-icon slot="start" name="chatbox-outline"></ion-icon>
+            <small>10</small>
+          </ion-button>
+          <ion-button color="medium">
+            <ion-icon slot="start" name="return-up-forward-outline"></ion-icon>
+            <small>{{ post.shared }}</small>
+          </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+          <ion-button color="medium">
+            <ion-icon size="small" slot="start" name="eye-outline"></ion-icon>
+            <small>100</small>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-card> -->
+
+
+    <ion-card class="post-list-card"  >
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="" />
+          </ion-avatar>
+          <ion-label>
+             Basil John
+            <p>2 minutes ago</p>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="medium">
+              <ion-icon slot="icon-only" md="ellipsis-vertical-outline" ios="ellipsis-horizontal-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+      </ion-item>
+      <ion-card-content class="post-list-content">
+        Hello USTP
+       </ion-card-content>
+      <img src="../../assets/background/first.jpg" />
+      
+    
+      <ion-item lines="none" class="ion-no-padding" style="margin-left: 10px">
+        <ion-buttons slot="start">
+          <ion-button color="danger">
+            <ion-icon name="heart-outline"></ion-icon>
+            <small>100</small>
+          </ion-button>
+          <ion-button color="medium">
+            <ion-icon slot="start" name="chatbox-outline"></ion-icon>
+            <small>10</small>
+          </ion-button>
+          <!-- <ion-button color="medium">
+            <ion-icon slot="start" name="return-up-forward-outline"></ion-icon>
+            <small>asdsa</small>
+          </ion-button> -->
+        </ion-buttons>
+<!-- 
+        <ion-buttons slot="end">
+          <ion-button color="medium">
+            <ion-icon size="small" slot="start" name="eye-outline"></ion-icon>
+            <small>100</small>
+          </ion-button>
+        </ion-buttons> -->
+      </ion-item>
+    </ion-card>
+
+    <ion-card class="post-list-card"  >
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="" />
+          <!-- [src]="post.photo" -->
+          </ion-avatar>
+          <ion-label>
+             Basil John
+            <p>2 minutes ago</p>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="medium">
+              <ion-icon slot="icon-only" md="ellipsis-vertical-outline" ios="ellipsis-horizontal-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+      </ion-item>
+      <ion-card-content class="post-list-content">
+        Hello USTP
+       </ion-card-content>
+      <img src="../../assets/background/first.jpg" />
+      
+     
+      <ion-item lines="none" class="ion-no-padding" style="margin-left: 10px">
+        <ion-buttons slot="start">
+          <ion-button color="danger">
+            <ion-icon name="heart-outline"></ion-icon>
+            <small>100</small>
+          </ion-button>
+          <ion-button color="medium">
+            <ion-icon slot="start" name="chatbox-outline"></ion-icon>
+            <small>10</small>
+          </ion-button>
+          <!-- <ion-button color="medium">
+            <ion-icon slot="start" name="return-up-forward-outline"></ion-icon>
+            <small>asdsa</small>
+          </ion-button> -->
+        </ion-buttons>
+
+        <!-- <ion-buttons slot="end">
+          <ion-button color="medium">
+            <ion-icon size="small" slot="start" name="eye-outline"></ion-icon>
+            <small>100</small>
+          </ion-button>
+        </ion-buttons> -->
+      </ion-item>
+    </ion-card>
+
+   
+
+    </ion-col>
+    </ng-container>
+    </ion-row>
+</ion-content> 
+
+
+
+
+

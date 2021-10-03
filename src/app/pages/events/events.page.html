@@ -1,0 +1,157 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" color="primary">
+      <!-- <ion-menu-button ></ion-menu-button> -->
+      <app-toggle></app-toggle>
+    </ion-buttons>
+    <ion-title>Events</ion-title>
+
+    <ion-buttons slot="end" color="primary" class="ion-padding" (click)= "calendar();" >
+      <ion-icon name="calendar-outline" class="calendar"  style="font-size: 23px;" ></ion-icon>
+     
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <app-event-refresher></app-event-refresher>
+
+  
+  <div class="banner">
+      <img class="cap_img" src="../../assets/background/MIDA.jpg"  />
+
+    <!-- <div class="caption ion-padding">
+      Join with <br>
+      upcoming events
+    </div> -->
+
+    <div class="search">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon slot="start" name="search-outline"></ion-icon>
+        <ion-input placeholder="Search events"></ion-input>
+        <ion-button slot='end'>
+          <img src="../../assets/filter.svg" />
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+  <div class="title">
+    <h2>Recently Added</h2>
+
+    <!-- <p>See all</p> -->
+  </div>
+
+  <div class="event-slider" >
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding" >
+      <ion-slide *ngFor="let row of new_events">
+        <ion-col class="ion-text-left">
+          <ion-card (click) = "event_selected(row.event_id)" >
+            <ion-card-header class="ion-no-padding">
+              <img  src="{{row.pic}}" />
+              <button class="topleft"  >{{row.type}}</button>
+            </ion-card-header>
+
+            <ion-card-content>
+              <!-- <p class="date">17th July, 2021</p> -->
+              <h2 class="eventname">{{row.event_name}}</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>{{row.event_location}}</p>
+
+              <div class="additional-info">
+                <!-- <div class="attendees">
+                  <img src="../../assets/persons/person1.svg" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+7</p>
+                  </div>
+                </div> -->
+
+                <p class="time">{{row.time}}</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      
+     
+    </ion-slides>
+  </div>
+
+  <div class="all" *ngFor="let row of events" >
+
+      <ion-card (click) = "event_selected(row.event_id)" >
+        <ion-card-header class="ion-no-padding">
+          <img  src="{{row.pic}}" />
+          <button class="topleft"  >{{row.type}}</button>
+
+        </ion-card-header>
+
+        <ion-card-content class="content">
+         
+          <h2 class="eventname">{{row.event_name}}</h2>
+          <p class="location"><ion-icon name="location"></ion-icon>{{row.event_location}}</p>
+
+          <div class="additional-info">
+            <p class="time"><ion-icon name="calendar-outline"></ion-icon>&nbsp;{{row.date}}</p>
+            <p class="time"><ion-icon name="time-outline"></ion-icon>&nbsp;{{row.time}}</p>
+          </div>
+        </ion-card-content>
+
+
+      
+        
+      </ion-card>
+
+</div>
+
+
+  
+
+  <!-- <div class="default-top-padding title">
+    <h2>Live right now</h2>
+
+    <p>See all</p>
+  </div>
+
+  <div class="live-event">
+    <img src="../../assets/events/event3.svg" />
+
+    <div class="info">
+      <div class="content">
+        <h6>World Art Day</h6>
+
+        <p class="stats">
+          <span><ion-icon name="eye"></ion-icon>&nbsp;2.3K</span><span><ion-icon name="heart"></ion-icon>&nbsp;3758</span>
+        </p>
+
+        <p class="location"><ion-icon name='location'></ion-icon>Caracas, Venezuela</p>
+
+        <div class="additional-info">
+          <div class="attendees">
+            <img src="../../assets/persons/person1.svg" />
+            <img src="../../assets/persons/person2.svg" />
+            <img src="../../assets/persons/person3.svg" />
+            <img src="../../assets/persons/person4.svg" />
+            <div class="count">
+              <img src="../../assets/persons/person-placeholder.svg" />
+
+              <p>+3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="indicator">
+        <div>Live</div>
+      </div>
+    </div>
+  </div> -->
+
+
+</ion-content> 

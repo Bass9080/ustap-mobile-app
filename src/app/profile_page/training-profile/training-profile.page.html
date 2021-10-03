@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" (click)="back_button()">
+      <ion-icon name="arrow-back-circle-outline" id = "back_button"></ion-icon>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "data">
+<app-training-profile-refresher></app-training-profile-refresher>
+  <div class="content">
+    <h2>{{data.training_name}}</h2>
+
+    <hr>
+    <h2>Details</h2>
+    <span class="location"><ion-icon name='location-outline'></ion-icon>&nbsp;&nbsp;{{data.training_location}}</span>
+    <p class="location"><ion-icon name='time-outline'></ion-icon>&nbsp;&nbsp;{{data.time}}</p>
+    <p class="location"><ion-icon name='calendar-outline'></ion-icon>&nbsp;&nbsp;{{data.training_date}}</p>
+    
+    
+    <div class="info">
+      <h4>Training Type</h4>
+      <p>{{data.training_type}}</p>
+
+   
+      <hr>
+      <h2>Key Skills</h2>
+      <p>{{data.training_description}}</p>
+ 
+  
+
+    
+
+    </div>
+  </div>
+  
+
+  
+  
+  
+    
+
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #fff">Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+        <ng-container>
+          <ion-item-divider></ion-item-divider>
+          <ion-item button detail="false" (click) = "logout()" routerDirection="root">
+        <ion-icon color="danger" slot="start"name="log-out-outline"></ion-icon>
+        <ion-label color="danger">Logout</ion-label>
+      </ion-item>
+        </ng-container>
+    </ion-list>
+</ion-content>

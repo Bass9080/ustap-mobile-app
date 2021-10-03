@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" (click)="back_button()">
+      <ion-icon name="arrow-back-circle-outline" id = "back_button"></ion-icon>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "data">
+
+  <app-alumni-profile-refresher></app-alumni-profile-refresher>
+
+
+  <ion-card >
+  <div class="banner justify-content-center">
+  
+    <img class="cap_img" [src]="data.profile_pic"  />
+  </div>
+  </ion-card>
+
+  <div class="content">
+    <h2>{{data.name}}</h2>
+    <p>{{data.company_name}}</p>
+    <hr>
+    <h2>About</h2>
+    <p class="location"><ion-icon name="mail-open"></ion-icon>&nbsp;&nbsp;{{data.email}}</p>
+    <p class="location"><ion-icon name="school-outline"></ion-icon>&nbsp;&nbsp;{{data.id_number}}</p>
+    <p class="location"><ion-icon name="call-outline"></ion-icon>&nbsp;&nbsp;{{data.phone_number}}</p>
+    
+    
+    <div class="info">
+      <h4>Course Graduated</h4>
+      <p>{{data.course}}</p>
+
+      <h4>Batch</h4>
+      <p>{{data.batch}}</p>
+
+      <h4>Position</h4>
+      <p>{{data.position}}</p>
+      <hr>
+     
+  
+
+    
+
+    </div>
+  </div>
+  
+
+  
+  
+  
+    
+
+</ion-content>

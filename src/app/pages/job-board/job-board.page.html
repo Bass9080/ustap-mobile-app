@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" color="primary">
+      <!-- <ion-menu-button ></ion-menu-button> -->
+      <app-toggle></app-toggle>
+    </ion-buttons>
+    <ion-title>Find Job</ion-title>
+
+    <ion-buttons slot="end" color="primary" class="ion-padding" (click)= "calendar();" >
+      <ion-icon name="calendar-outline" class="calendar"  style="font-size: 23px;" ></ion-icon>
+     
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-refresher></app-refresher>
+  <div class="banner">
+    <img class="cap_img" src="../../assets/background/MIDA.jpg"  />
+
+    
+
+    <div class="caption ion-padding">
+      <!-- <p style="color: #000;" >
+      Search <br>
+      Opportunities</p> -->
+    </div>
+
+    <div class="search">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon slot="start" name="search-outline"></ion-icon>
+        <ion-input placeholder="Search jobs"></ion-input>
+        <ion-button slot='end'>
+          <img src="../../assets/filter.svg" />
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+  <div class="title">
+    <h2>Job list</h2>
+    <!-- <p>See all</p> -->
+    
+  </div>
+  <ion-row>
+    <ng-container *ngIf="!isLoading">
+     
+
+    <ion-col
+    size="12"
+    size-md="6"
+    offsetMd="3"
+    size-lg="7"
+    offsetLg="4"
+    class="ion-no-padding"
+  >
+
+    <ion-card class="post-list-card" *ngFor="let job of jobs">
+      <ion-item lines="inset" (click) = "info(job.job_id)"  >
+       
+          <img [src]="job.logo" style="width: 100px; height: 120px;" class="ion-padding" />
+         
+          <ion-label>
+            {{job.company_name}}
+           <h2>{{job.job_title}}</h2>
+          
+           
+          
+          </ion-label>
+          
+         
+          <ion-buttons slot="end">
+            <ion-button color="medium">
+              <ion-icon slot="icon-only" md="ellipsis-vertical-outline" ios="ellipsis-horizontal-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          
+          
+      </ion-item>
+      <ion-label class="ion-padding" style="justify-content: center;"> 
+        <h3 class="ion-padding" style="font-weight:bold;">Posted By :  {{job.name}}</h3>
+
+        <!-- <p style="margin-top: 5px;">{{job.job_description}}</p> -->
+      </ion-label>
+     
+      
+    </ion-card>
+
+    
+
+  
+
+ 
+    </ion-col>
+    </ng-container>
+    </ion-row>
+  </ion-content>

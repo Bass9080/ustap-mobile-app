@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="toolbar" >
+    <ion-buttons slot="start" color="primary">
+      <!-- <ion-menu-button ></ion-menu-button> -->
+      <app-toggle></app-toggle>
+    </ion-buttons>
+    <ion-title>Trainings And Services</ion-title>
+
+    <ion-buttons slot="end" color="primary" class="ion-padding" (click)= "calendar();" >
+      <ion-icon name="calendar-outline" class="calendar"  style="font-size: 23px;" ></ion-icon>
+     
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-training-refresher></app-training-refresher>
+  <div class="banner">
+    <img class="cap_img" src="../../assets/background/MIDA.jpg"  />
+    <!-- <div class="caption ion-padding">
+      Join  <br>
+        Trainings
+    </div> -->
+    <div class="search">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon slot="start" name="search-outline"></ion-icon>
+        <ion-input placeholder="Search Trainings"></ion-input>
+        <ion-button slot='end'>
+          <img src="../../assets/filter.svg" />
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+  
+  <div class="live-event" *ngFor="let row of training">
+    <div class="info" (click) = "training_selected(row.training_id)">
+      <div class="content">
+        <h6>{{row.training_name}}</h6>
+       
+        <h6>{{row.training_type}}</h6>
+        <p class="location" style="font-size: 15px;"><ion-icon name='location' style="font-size: 15px;"></ion-icon>Where : {{row.training_location}}</p>
+        <div class="additional-info">
+         <p >Date of {{row.training_type}}: {{row.date}}</p>
+         <p >Time: {{row.time}}</p>
+        </div>
+      </div>   
+    </div>
+  </div>
+</ion-content> 
